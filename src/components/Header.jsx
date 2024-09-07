@@ -1,37 +1,38 @@
-import React from 'react'
-import Link from 'next/link'
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import Link from "next/link";
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 
 function Header() {
   return (
-    <header className='bg-gradient-to-r from-blue-300 to-purple-400 shadow-lg'>
-      <div className='max-w-6xl mx-auto flex justify-between items-center p-3'>
-        {/* logo */}
-        <Link href='/' className='text-2xl font-extrabold group cursor-pointer'>
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 drop-shadow-md group-hover:from-blue-400 group-hover:to-blue-600'>
-            NEXIMUS
-          </span>
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-700 drop-shadow-md group-hover:from-purple-400 group-hover:to-purple-600'>
-            AI
-          </span>
+    <header className="bg-white shadow-sm">
+      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+        {/* Logo */}
+        <Link href="/" className="text-2xl font-semibold">
+          <span className="text-black">NEXIMUS</span>
+          <span className="text-gray-500">AI</span>
         </Link>
-        {/* add a navigation menu */}
-        <nav>
-          <ul className='flex gap-4'>
-            <Link href='/'>Home</Link>
-            <Link href='/about'>About</Link>
-            <SignedIn>
-              <UserButton/>
-            </SignedIn>
-            <SignedOut>
-              <SignInButton/>
-            </SignedOut>
-            
-          </ul>
+
+        {/* Navigation */}
+        <nav className="flex items-center space-x-8">
+          <Link href="/" className="text-gray-700 text-lg hover:text-black transition">
+            Home
+          </Link>
+          <Link href="/about" className="text-gray-700 text-lg hover:text-black transition">
+            About
+          </Link>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton>
+              <button className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">
+                Sign In
+              </button>
+            </SignInButton>
+          </SignedOut>
         </nav>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
