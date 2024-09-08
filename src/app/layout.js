@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Next auth",
-  description: "Next Auth with Clerk and Mongodb",
+  title: "NEXIMUSAI",
+  description: "Next Generation AI Immersive Learning Platform",
 };
 
 export default function RootLayout({ children }) {
